@@ -1,72 +1,63 @@
 <!DOCTYPE html>
-<html lang="pl-PL">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="@zlasu">
-
-    <title>Oko saurona</title>
-    <link rel="shortcut icon" href="assets/dist/img/ico/favicon.png" type="image/x-icon">
-
-    <!-- SCRIPT -->
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>
-        WebFont.load({
-            google: {
-                families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
-            }
-        });
-    </script>
-
-    <!-- START GLOBAL MANDATORY STYLE -->
-    <link href="assets/dist/css/base.css" rel="stylesheet" type="text/css"/>
-    <!-- START PAGE LABEL PLUGINS -->
-    <link href="assets/plugins/datatables/dataTables.min.css" rel="stylesheet" type="text/css"/>
-    <!-- START THEME LAYOUT STYLE -->
-    <link href="assets/dist/css/component_ui.min.css" rel="stylesheet" type="text/css"/>
-    <link id="defaultTheme" href="assets/dist/css/skins/component_ui_black.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/dist/css/custom.css" rel="stylesheet" type="text/css"/>
-
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title></title>
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css">
+    <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico'/>
 </head>
+
 <body>
-<div id="wrapper" class="wrapper animsition" style="animation-duration: 1500ms; opacity: 1;">
-    <!-- Navigation -->
-    <div data-include="header"></div>
-
-    <div data-include="menu"></div>
+<div class="loader"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
 
 
-    <div id="page-wrapper">
-        <!-- main content -->
-        <div class="content">
 
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="section-body">
+
+                    <div id="content"></div>
+                    <div id="templates" style="display: none;"></div>
+
+                </div>
+            </section>
         </div>
+
     </div>
-
 </div>
+<!-- Router -->
+<!-- General JS Scripts -->
+<script src="assets/js/app.min.js"></script>
+<!-- JS Libraies -->
+<script src="assets/bundles/datatables/datatables.min.js"></script>
+<script src="assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets/bundles/jquery-ui/jquery-ui.min.js"></script>
+<!-- Page Specific JS File -->
+<script src="assets/js/page/datatables.js"></script>
+<!-- Template JS File -->
+<script src="assets/js/scripts.js"></script>
 
-
-
-
-<!-- START CORE PLUGINS -->
-<script src="assets/plugins/jQuery/jquery-1.12.4.min.js"></script>
-<script src="assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/plugins/metisMenu/metisMenu.min.js"></script>
-<script src="assets/plugins/lobipanel/lobipanel.min.js"></script>
-<script src="assets/plugins/animsition/js/animsition.min.js"></script>
-<script src="assets/plugins/fastclick/fastclick.min.js"></script>
-<script src="assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- STRAT PAGE LABEL PLUGINS -->
-<script src="assets/plugins/datatables/dataTables.min.js"></script>
-<!-- START THEME LABEL SCRIPT -->
-<script src="assets/dist/js/app.js"></script>
-<script src="assets/dist/js/jQuery.style.switcher.min.js"></script>
-
-<!-- ZLASU SCRIPT -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-<script src="js/ownFunctions.js"></script>
+<!-- Custom JS File -->
+<script src="js/main.js"></script>
+<script src="js/elements.js"></script>
+<script src="js/navigo.js"></script>
+<script src="js/mustache.js"></script>
+<script src="js/helloVietnam.js"></script>
+<script src="js/router.js"></script>
 
 </body>
+
 </html>
