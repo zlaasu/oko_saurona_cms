@@ -22,8 +22,11 @@ const router = new Navigo(root, useHash, HASH);
 
 router
     .on({
-        '/book/edit/:id': function (param) {
-            HelloVietnam.bookEdit(param);
+        '/device': function () {
+            HelloVietnam.deviceList();
+        },
+        '/device/:id': function (param) {
+            HelloVietnam.deviceEdit(param);
         },
         '/book': function () {
             HelloVietnam.books();

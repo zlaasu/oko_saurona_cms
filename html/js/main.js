@@ -1,6 +1,7 @@
-var API_URL = 'http://localhost:8282/';
-var MAIN_URL = 'http://localhost/#/';
+var API_URL = 'http://localhost:8080/';
+var MAIN_URL = 'http://localhost:8080/#/';
 var HASH = '#';
+var GMAPS = "AIzaSyBdIss9DT7hkFJzdxI_k6h8PelgwXGNs9Q";
 
 $.ajaxSetup({
     cache: false,

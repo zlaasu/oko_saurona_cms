@@ -24,64 +24,63 @@ HelloVietnam.ajaxData = function (url, type, key, callback, data) {
     });
 };
 
-HelloVietnam.books = function () {
-    HelloVietnam.ajaxData('books', 'GET', false, function (data) {
+HelloVietnam.deviceList = function () {
+    HelloVietnam.ajaxData('device/list', 'GET', false, function (data) {
         if (data) {
-            $("#templates").load("./templates/bookList.html #bookList", function () {
-                // let users = {users: [{id : 100, name : "jane"}]};
-                // let data = [{id: 100}]
-                //
-                // for (const user of data) {
-                //     let userData = users.find(el => el.id === user.id)
-                //
-                // }
-                let dataObj = {array : data};
-                let output = Mustache.render($('#bookList').html(), dataObj);
+            $("#templates").load("./templates/deviceList.html", function () {
+                let output = Mustache.render($('#bookList').html(), {devices: data});
                 $('#content').html(output);
+                $('table').DataTable();
             });
         }
     });
 };
 
-HelloVietnam.bookSave = function () {
-    console.log('CLICKED');
-}
-
-HelloVietnam.bookEdit = function (param) {
-    HelloVietnam.ajaxData('books/' + param.id, 'GET', false, function (data) {
+HelloVietnam.deviceDelete = function (id) {
+    HelloVietnam.ajaxData('device/' + id, 'DELETE', false, function (data) {
         if (data) {
-            $("#templates").load("./templates/bookEdit.html #bookEdit", function () {
-                let output = Mustache.render($('#bookEdit').html(), data);
-                $('#content').html(output);
-
-            });
+            $('#delete_' + id).parents("tr").remove();
         }
     });
+};
 
-    function bookSave() {
-        console.log('CLICKED');
+HelloVietnam.deviceEdit = function (param) {
+    if (param.id != 0) {
+        HelloVietnam.ajaxData('device/' + param.id, 'GET', false, function (data) {
+            if (data) {
+                parsForm(data);
+            }
+        });
+    } else {
+        parsForm("");
     }
 
-    // $('#bookSave').on('click', function (event) {
-    //     event.preventDefault();
-    //
-    //     console.log('CLICKED');
-    //
-    //     let formData = {};
-    //     formData['id'] = $("input[id='book_id']").val();
-    //     formData['isbn'] = $("input[id='book_isbn']").val();
-    //     formData['title'] = $("input[id='book_title']").val();
-    //     formData['author'] = $("input[id='book_author']").val();
-    //     formData['publisher'] = $("input[id='book_publisher']").val();
-    //     formData['type'] = $("input[id='book_type']").val();
-    //
-    //     console.log($("input[name='book_id']").val());
-    //     console.log(JSON.stringify(formData));
-    //
-    //     HelloVietnam.ajaxData('books', 'PUT', false, function(data) {
-    //         if (data) {
-    //             window.location.href = '#/books';
-    //         }
-    //     }, formData);
-    // });
+    function parsForm(data) {
+        $("#templates").load("./templates/deviceEdit.html #editForm", function () {
+            let output = Mustache.render($('#editForm').html(), data);
+            $('#content').html(output);
+
+        });
+    }
+};
+
+HelloVietnam.deviceSave = function () {
+    event.preventDefault();
+
+    let formData = {};
+    formData['id'] = $("input[id='device_id']").val() || 0;
+    formData['name'] = $("input[id='device_name']").val();
+    formData['status'] = $("input[id='device_status']").val();
+    formData['type'] = $("input[id='device_type']").val();
+
+    let type = "POST";
+    if (formData['id'] > 0) {
+        type = "PUT"
+    }
+
+    HelloVietnam.ajaxData('device/', type, false, function (data) {
+        if (data) {
+            window.location.href = HASH + '/device';
+        }
+    }, JSON.stringify(formData));
 };
