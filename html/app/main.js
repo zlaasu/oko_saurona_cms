@@ -32,3 +32,29 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+
+var HelloVietnam = HelloVietnam || {};
+HelloVietnam.apiUrl = API_URL;
+
+HelloVietnam.ajaxData = function (url, type, key, callback, data) {
+    data = data || {};
+
+    let urlPath = API_URL + url;
+    let lang = $('body').data('lang') || 'pl-PL';
+    $.ajax({
+        type: type,
+        url: urlPath,
+        data: data,
+        //data: JSON.stringify(data),
+        contentType: 'application/json',
+        cache: false,
+        dataType: 'json',
+        headers: {
+            'Content-Language': lang,
+            'Accept-Language': lang
+        },
+        success: callback,
+        error: callback
+    });
+};

@@ -1,0 +1,41 @@
+<div id="editForm">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Book add/edit</h4>
+                </div>
+                <div class="card-body">
+                    <input type="text" class="form-control" id="device_id" hidden value="{{id}}">
+
+                    <div class="form-group">
+                        <label class="custom-switch mt-2">
+                            <input type="checkbox" id="device_status" name="custom-switch-checkbox"
+                                   class="custom-switch-input" {{status}}>
+                            <span class="custom-switch-indicator"></span>
+                            <span class="custom-switch-description">ACTIVE</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select class="form-control form-control-sm" id="device_type" required>
+                            <option value="1" {{type1}}>PHONE</option>
+                            <option value="2" {{type2}}>BIKE</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="device_name" required value="{{name}}">
+                    </div>
+
+                    <div class="card-footer text-right">
+                        <button onclick="HelloVietnam.deviceSave()" class="btn btn-primary mr-1" id="save">Save</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
