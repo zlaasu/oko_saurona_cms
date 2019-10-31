@@ -33,6 +33,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
+console.log("HELLO VIETNAM!!!");
 
 var HelloVietnam = HelloVietnam || {};
 HelloVietnam.apiUrl = API_URL;

@@ -31,6 +31,12 @@ router
         '/book': function () {
             HelloVietnam.books();
         },
+        '/map': function () {
+            HelloVietnam.map();
+        },
+        '/heatmap': function () {
+            HelloVietnam.mapHeat();
+        },
         '*': function () {
             console.log('Home......');
         }
