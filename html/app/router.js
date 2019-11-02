@@ -28,8 +28,8 @@ router
         '/device/:id': function (param) {
             HelloVietnam.deviceEdit(param);
         },
-        '/book': function () {
-            HelloVietnam.books();
+        '/trap': function () {
+            HelloVietnam.trap();
         },
         '/map': function () {
             HelloVietnam.map();
