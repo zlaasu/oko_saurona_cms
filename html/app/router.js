@@ -36,18 +36,28 @@ router
             HelloVietnam.menu();
         },
         '/device': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.deviceList();
         },
         '/device/:id': function (param) {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.deviceEdit(param);
         },
         '/trap': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.trap();
         },
         '/map': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.map();
         },
         '/heatmap': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.mapHeat();
         },
         '*': function () {

@@ -90,7 +90,7 @@ HelloVietnam.deviceSave = function () {
         type = "PUT"
     }
 
-    HelloVietnam.ajaxData('api/cms/device/', type, false, function (data) {
+    HelloVietnam.ajaxData('api/cms/device/'+ formData['id'], type, false, function (data) {
         if (data) {
             window.location.href = HASH + '/device';
         }

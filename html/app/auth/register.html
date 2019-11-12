@@ -10,7 +10,7 @@
                         <h4>Register</h4>
                     </div>
                     <div class="card-body">
-                        <form method="POST" class="needs-validation" novalidate="">
+                        <form method="POST" class="needs-validation" novalidate="" id="registerForm">
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label for="frist_name">First Name</label>
@@ -24,36 +24,26 @@
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input id="email" type="email" class="form-control" name="email" required>
-                                <div class="invalid-feedback">
-                                    Oh no! Email is invalid.
-                                </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label for="password" class="d-block">Password</label>
                                     <input id="password" type="password" class="form-control pwstrength"
                                            data-indicator="pwindicator"
-                                           name="password" required>
-                                    <div class="invalid-feedback">
-                                        Trust me I will keep it safe
-                                    </div>
+                                           name="password" required minlength=6>
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="password2" class="d-block">Password Confirmation</label>
-                                    <input id="password2" type="password" class="form-control" name="password-confirm"
-                                           required>
-                                    <div class="invalid-feedback d-block" id="match-message">
-                                        NULL? Like power?
-                                    </div>
+                                    <input id="password2" type="password" class="form-control" name="password-confirm" required>
+
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" name="agree" class="custom-control-input" id="agree"
-                                           required>
-
-                                    <label class="custom-control-label" for="agree">I agree with the terms and
-                                        conditions</label>
+                                    <input type="checkbox" name="agree" class="custom-control-input" id="agree" required>
+                                    <label class="custom-control-label" for="agree">
+                                        I agree with the terms and conditions
+                                    </label>
                                 </div>
                             </div>
                             <div class="form-group">
