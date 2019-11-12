@@ -1,7 +1,7 @@
 let deviceTemplateFolder = "./app/device/";
 
 HelloVietnam.deviceList = function () {
-    HelloVietnam.ajaxData('device/list', 'GET', false, function (data) {
+    HelloVietnam.ajaxData('api/cms/device/list', 'GET', false, function (data) {
         if (data) {
             $("#templates").load(deviceTemplateFolder + "deviceList.html", function () {
                 for (var i = 0; i < data.length; i++) {
@@ -36,7 +36,7 @@ HelloVietnam.deviceList = function () {
 };
 
 HelloVietnam.deviceDelete = function (id) {
-    HelloVietnam.ajaxData('device/' + id, 'DELETE', false, function (data) {
+    HelloVietnam.ajaxData('api/cms/device/' + id, 'DELETE', false, function (data) {
         if (data) {
             $('#delete_' + id).parents("tr").remove();
         }
@@ -45,7 +45,7 @@ HelloVietnam.deviceDelete = function (id) {
 
 HelloVietnam.deviceEdit = function (param) {
     if (param.id != 0) {
-        HelloVietnam.ajaxData('device/' + param.id, 'GET', false, function (data) {
+        HelloVietnam.ajaxData('api/cms/device/' + param.id, 'GET', false, function (data) {
             if (data) {
                 if (data.status == 1) {
                     data.status = "checked";
@@ -90,7 +90,7 @@ HelloVietnam.deviceSave = function () {
         type = "PUT"
     }
 
-    HelloVietnam.ajaxData('device/', type, false, function (data) {
+    HelloVietnam.ajaxData('api/cms/device/', type, false, function (data) {
         if (data) {
             window.location.href = HASH + '/device';
         }

@@ -54,7 +54,7 @@ HelloVietnam.trap = function () {
                         //htmlStr += "{" + myPolygon.getPath().getAt(i).toUrlValue(5) + "}, ";
                         //htmlStr += "new google.maps.LatLng(" + myPolygon.getPath().getAt(i).toUrlValue(5) + "), ";
                         //Use this one instead if you want to get rid of the wrap > new google.maps.LatLng(),
-                        htmlStr += "" + myPolygon.getPath().getAt(i).toUrlValue(5);
+                        htmlStr += " / " + myPolygon.getPath().getAt(i).toUrlValue(5);
                     }
                     //htmlStr += "]";
                     console.log(htmlStr);

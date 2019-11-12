@@ -1,20 +1,22 @@
-var API_URL = 'https://okosaurona.zlasu.org/backend/';
-var MAIN_URL = 'https://okosaurona.zlasu.org/backend/#/';
+// var API_URL = 'https://okosaurona.zlasu.org/backend/';
+var API_URL = 'http://localhost:8080/';
+// var MAIN_URL = 'https://okosaurona.zlasu.org/backend/#/';
 var HASH = '#';
 var GMAPS = "AIzaSyBdIss9DT7hkFJzdxI_k6h8PelgwXGNs9Q";
 
 $.ajaxSetup({
     cache: false,
-    headers: { "cache-control": "no-cache" }
-    //async: true,
-    // beforeSend: function (xhr) {
-    //     xhr.setRequestHeader("Authorization", localStorage.getItem('token'));
-    // }
+    headers: {"cache-control": "no-cache"},
+    beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem('token'));
+    }
 });
+
 
 $(document).ajaxError(function (event, jqxhr, settings, exception) {
     if (jqxhr.status == 401) {
-        window.location.href = 'index.html';
+        console.log("TYPKU MASZ 401");
+        //window.location.href = HASH + "/login'";
     }
 });
 
@@ -58,4 +60,11 @@ HelloVietnam.ajaxData = function (url, type, key, callback, data) {
         success: callback,
         error: callback
     });
+};
+
+HelloVietnam.clear = function () {
+    $('#auth-container').html("");
+    $('#menu-container').html("");
+    $('#header-container').html("");
+    $('#content').html("");
 };

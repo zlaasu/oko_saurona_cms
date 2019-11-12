@@ -22,6 +22,19 @@ const router = new Navigo(root, useHash, HASH);
 
 router
     .on({
+        '/login': function () {
+            HelloVietnam.clear();
+            HelloVietnam.login();
+        },
+        '/register': function () {
+            HelloVietnam.clear();
+            HelloVietnam.register();
+        },
+        '/home': function () {
+            HelloVietnam.clear();
+            HelloVietnam.header();
+            HelloVietnam.menu();
+        },
         '/device': function () {
             HelloVietnam.deviceList();
         },
