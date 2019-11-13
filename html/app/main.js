@@ -14,8 +14,7 @@ $.ajaxSetup({
 
 $(document).ajaxError(function (event, jqxhr, settings, exception) {
     if (jqxhr.status == 401) {
-        console.log("TYPKU MASZ 401");
-        //window.location.href = HASH + "/login'";
+        window.location.href = HASH + "/login";
     }
 });
 
@@ -67,7 +66,6 @@ HelloVietnam.ajaxData = function (url, type, key, callback, data) {
 };
 
 
-
 HelloVietnam.clear = function () {
     $('#auth-container').html("");
     $('#menu-container').html("");
@@ -89,3 +87,18 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+function showAjaxError(response) {
+    iziToast.error({
+        title: 'Error: ' + response.status,
+        message: 'Coś nie pytkło!',
+        position: 'topRight'
+    });
+}
+
+function showAjaxSuccessSave(response) {
+    iziToast.success({
+        title: "Saved",
+        position: 'topRight'
+    });
+}

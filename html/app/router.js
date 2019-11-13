@@ -63,7 +63,7 @@ router
         '/heatmap': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
-            HelloVietnam.mapHeat();
+            HelloVietnam.map();
         },
         '*': function () {
             console.log('Home......');

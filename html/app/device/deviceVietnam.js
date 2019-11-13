@@ -1,7 +1,7 @@
 let deviceTemplateFolder = "./app/device/";
 
 HelloVietnam.deviceList = function () {
-    HelloVietnam.ajaxData('api/cms/device/list', 'GET', false, function (data) {
+    HelloVietnam.ajaxDataResponse('api/cms/device/list', 'GET', false, function (data) {
         if (data) {
             $("#templates").load(deviceTemplateFolder + "deviceList.html", function () {
                 for (var i = 0; i < data.length; i++) {
@@ -46,20 +46,38 @@ HelloVietnam.deviceList = function () {
                 $('table').DataTable();
             });
         }
+    }, function (data) {
+        showAjaxError(data);
     });
 };
 
 HelloVietnam.deviceDelete = function (id) {
-    HelloVietnam.ajaxData('api/cms/device/' + id, 'DELETE', false, function (data) {
-        if (data) {
-            $('#delete_' + id).parents("tr").remove();
-        }
-    });
+    swal({
+        title: 'Are you sure?',
+        text: 'Once deleted, you will not be able to recover this device!',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                HelloVietnam.ajaxDataResponse('api/cms/device/' + id, 'DELETE', false, function (data) {
+
+                    $('#delete_' + id).parents("tr").remove();
+
+                    swal('', {
+                        icon: 'success',
+                    });
+                }, function (data) {
+                    showAjaxError(data);
+                });
+            }
+        });
 };
 
 HelloVietnam.deviceEdit = function (param) {
     if (param.id != 0) {
-        HelloVietnam.ajaxData('api/cms/device/' + param.id, 'GET', false, function (data) {
+        HelloVietnam.ajaxDataResponse('api/cms/device/' + param.id, 'GET', false, function (data) {
             if (data) {
                 if (data.active == true) {
                     data.active = "checked";
@@ -84,6 +102,8 @@ HelloVietnam.deviceEdit = function (param) {
 
                 parsForm(data);
             }
+        }, function (data) {
+            showAjaxError(data);
         });
     } else {
         parsForm("");
@@ -108,12 +128,13 @@ HelloVietnam.deviceSave = function () {
 
     let type = "POST";
     if (formData['id'] > 0) {
-        type = "PUT"
+        type = "PUT";
     }
 
-    HelloVietnam.ajaxData('api/cms/device/' + formData['id'], type, false, function (data) {
-        if (data) {
-            window.location.href = HASH + '/device';
-        }
+    HelloVietnam.ajaxDataResponse('api/cms/device/' + formData['id'], type, false, function (data) {
+        showAjaxSuccessSave(data);
+        window.location.href = HASH + '/device';
+    }, function (data) {
+        showAjaxError(data);
     }, JSON.stringify(formData));
 };

@@ -28,7 +28,7 @@ HelloVietnam.login = function () {
                     }, function (response) {
                         iziToast.error({
                             title: 'Błąd!',
-                            message: 'Coś nie pykło! <b>Zły login lub hasło</b>.<br> Może nie masz konta?<br>Power jest <b>NULL?</b>',
+                            message: 'Coś nie pykło! <b>Zły login lub hasło?</b><br> Może nie masz konta?<br>Power jest <b>NULL?</b>',
                             position: 'topRight'
                         });
                     }, JSON.stringify(formData));
@@ -70,8 +70,6 @@ HelloVietnam.register = function () {
 
                 HelloVietnam.ajaxDataResponse('api/auth/signup', 'POST', false,
                     function (response) {
-                        // let json = JSON.parse(response.responseText);
-
                         iziToast.success({
                             title: 'Success',
                             message: response.message,
@@ -81,13 +79,7 @@ HelloVietnam.register = function () {
                         localStorage.token = response.accessToken;
                         window.location.href = HASH + '/login';
                     }, function (response) {
-                        // let json = JSON.parse(response.responseText);
-
-                        iziToast.error({
-                            title: 'Błąd ' + response.status,
-                            message: response.message,
-                            position: 'topRight'
-                        });
+                        showAjaxError(response);
                     }, JSON.stringify(formData));
 
                 return false;
