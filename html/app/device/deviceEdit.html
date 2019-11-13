@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label class="mt-2">
                             <input type="checkbox" id="device_status" name="custom-switch-checkbox"
-                                   class="custom-switch-input" {{status}}>
+                                   class="custom-switch-input" {{active}}>
                             <span class="custom-switch-indicator"></span>
                             <span class="custom-switch-description">ACTIVE</span>
                         </label>
@@ -23,8 +23,10 @@
                     <div class="form-group">
                         <label>Type</label>
                         <select class="form-control form-control-sm" id="device_type" required>
-                            <option value="1" {{type1}}>PHONE</option>
-                            <option value="2" {{type2}}>BIKE</option>
+                            <option value="OTHER" {{type1}}>OTHER</option>
+                            <option value="BIKE" {{type2}}>BIKE</option>
+                            <option value="PHONE" {{type3}}>PHONE</option>
+                            <option value="CAR" {{type4}}>CAR</option>
                         </select>
                     </div>
 

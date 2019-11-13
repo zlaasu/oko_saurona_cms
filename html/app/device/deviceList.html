@@ -18,7 +18,8 @@
                                 <th>Id</th>
                                 <th>Type</th>
                                 <th>Name</th>
-                                <th>Status</th>
+                                <th>Active</th>
+                                <th>Type</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
@@ -32,14 +33,21 @@
                                 </td>
                                 <td>{{name}}</td>
                                 <td>
-                                    <span class="badge {{statusBadge}}">{{statusName}}</span>
+                                    <span class="badge {{activeBadge}}">{{activeName}}</span>
+                                </td>
+                                <td>
+                                    <i class="material-icons">{{externalIcon}}</i>
+                                    <span class="icon-name">{{externalName}}</span>
                                 </td>
                                 <td class="">
                                     <a href="#/device/{{id}}" class="btn btn-outline-primary"
                                        role="button">Edit</a>
+                                    <!--{{^external}}-->
                                     <a onclick="HelloVietnam.deviceDelete({{id}})" id="delete_{{id}}"
                                        style="color: white"
                                        class="btn btn-outline-danger" role="button">Delete</a>
+
+                                    <!--{{/external}}-->
 
                                 </td>
                             </tr>
