@@ -1,0 +1,63 @@
+<div id="editForm">
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-4">
+            <div class="card card-success">
+                <div class="card-header">
+                    <h4>Trap add/edit</h4>
+                    <div class="card-header-action">
+                        <button onclick="HelloVietnam.trapSave()" class="btn btn-outline-success" id="save">Save
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <input type="text" class="form-control" id="trap_id" hidden value="{{trap.id}}">
+
+                    <div class="form-group">
+                        <label class="mt-2">
+                            <input type="checkbox" id="trap_status" name="custom-switch-checkbox"
+                                   class="custom-switch-input" {{trap.active}}>
+                            <span class="custom-switch-indicator"></span>
+                            <span class="custom-switch-description">ACTIVE</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select class="form-control form-control-sm" id="trap_type" required>
+                            <option value="IN" {{trap.type1}}>IN</option>
+                            <option value="OUT" {{trap.type2}}>OUT</option>
+                            <option value="IN_OUT" {{trap.type3}}>IN / OUT</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="trap_name" required value="{{trap.name}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pick device</label>
+                        <select id="devicePicker" class="form-control select2" multiple="">
+                            <!--{{#devices}}-->
+                            <option value="{{id}}">{{name}}</option>
+                            <!--{{/devices}}-->
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-8">
+            <div class="card card-warning">
+
+                <div class="card-body">
+
+                    <div id="map" style="height: 600px; position: relative; overflow: hidden;"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

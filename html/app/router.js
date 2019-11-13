@@ -48,7 +48,12 @@ router
         '/trap': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
-            HelloVietnam.trap();
+            HelloVietnam.trapList();
+        },
+        '/trap/:id': function (param) {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.trapEdit(param);
         },
         '/map': function () {
             HelloVietnam.header();
