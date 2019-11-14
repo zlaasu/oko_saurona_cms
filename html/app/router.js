@@ -31,7 +31,6 @@ router
             HelloVietnam.register();
         },
         '/home': function () {
-            HelloVietnam.clear();
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.notificationHeaderRefresh();
@@ -79,7 +78,8 @@ router
             HelloVietnam.notificationHeaderRefresh();
         },
         '*': function () {
-            console.log('Home......');
+            HelloVietnam.clear();
+            window.location.href = HASH + "/login";
         }
     })
     .resolve();

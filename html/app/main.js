@@ -73,8 +73,22 @@ HelloVietnam.clear = function () {
     $('#content').html("");
 };
 
+HelloVietnam.clearAuth = function () {
+    $('#auth-container').html("");
+};
+
+HelloVietnam.hideNav = function () {
+    $('#menu-container').hide();
+    $('#header-container').hide();
+};
+
+HelloVietnam.showNav = function () {
+    $('#menu-container').show();
+    $('#header-container').show();
+};
+
 var favicon = new Favico({
-    animation : 'popFade'
+    animation: 'popFade'
 });
 
 var getUrlParameter = function getUrlParameter(sParam) {
