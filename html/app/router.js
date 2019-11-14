@@ -34,36 +34,49 @@ router
             HelloVietnam.clear();
             HelloVietnam.header();
             HelloVietnam.menu();
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/device': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.deviceList();
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/device/:id': function (param) {
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.deviceEdit(param);
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/trap': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.trapList();
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/trap/:id': function (param) {
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.trapEdit(param);
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/map': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.map();
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/heatmap': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.map();
+            HelloVietnam.notificationHeaderRefresh();
+        },
+        '/notification': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.notificationList();
+            HelloVietnam.notificationHeaderRefresh();
         },
         '*': function () {
             console.log('Home......');

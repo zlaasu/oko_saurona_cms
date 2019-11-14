@@ -1,11 +1,11 @@
 let menuTemplateFolder = "./app/menu/";
 
 HelloVietnam.menu = function () {
-    if ($("#menu-exists").length == 0) {
+    if ($("#sidebar-wrapper").length == 0) {
         $("#templates").load(menuTemplateFolder + "menu.html", function () {
             let output = Mustache.render($('#menu').html(), "");
             //console.log(output);
-            $('#menu-container').html(output);
+            $('#menu-exists').html(output);
         });
     }
 };

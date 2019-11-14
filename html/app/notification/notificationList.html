@@ -1,0 +1,54 @@
+<div id="list">
+    <div class="row">
+        <div class="col-10">
+            <div class="card card-success">
+                <div class="card-header">
+                    <h4>Devices</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover align-center" style="width:100%;">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Message</th>
+                                <th>Time</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!--{{#notification}}-->
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{title}}</td>
+                                <td>{{message}}</td>
+                                <td>
+                                    {{day}} {{hour}}
+                                </td>
+                                <td>
+                                    <!--{{#userRead}}-->
+                                    <a onclick="HelloVietnam.notificationUnMarkRead({{id}})" id="delete_{{id}}"
+                                       style="color: #96a2b4;" class="btn btn-outline-dark" role="button">
+                                        <i class="fas fa-check"></i>
+                                        Unmark
+                                    </a>
+                                    <!--{{/userRead}}-->
+                                    <!--{{^userRead}}-->
+                                    <a onclick="HelloVietnam.notificationMarkRead({{id}})" id="delete_{{id}}"
+                                       style="color: white" class="btn btn-outline-secondary" role="button">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Mark read
+                                    </a>
+                                    <!--{{/userRead}}-->
+                                </td>
+                            </tr>
+                            <!--{{/notification}}-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

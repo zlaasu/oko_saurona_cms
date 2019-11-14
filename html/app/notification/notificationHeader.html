@@ -1,0 +1,53 @@
+<div id="list">
+
+    <a href="#" data-toggle="dropdown"
+       class="nav-link notification-toggle nav-link-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             class="feather feather-bell">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+
+        <!--{{#info.showCount}}-->
+        <span class="badge headerBadge2">
+            {{info.count}}
+        </span>
+        <!--{{/info.showCount}}-->
+
+    </a>
+
+    <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+        <div class="dropdown-header">
+            Notifications
+        </div>
+
+
+        <div class="dropdown-list-content dropdown-list-icons">
+
+            <!--{{#notification}}-->
+            <div class="dropdown-item">
+                <span class="dropdown-item-icon bg-info text-white">
+                    <i class="fas fa-bell"></i>
+                </span>
+                <span class="dropdown-item-desc">
+                    {{title}}<br>
+                    {{message}}
+                    <span class="time"> {{day}} - {{hour}}</span>
+                  </span>
+                <span>
+                    <div onclick="HelloVietnam.notificationMarkRead({{id}})" class="btn btn-icon icon-left btn-secondary"><i
+                            class="fas fa-check"></i></div>
+                </span>
+            </div>
+            <!--{{/notification}}-->
+
+        </div>
+
+
+        <div class="dropdown-footer text-center">
+            <a href="#/notification">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+
+</div>

@@ -73,6 +73,10 @@ HelloVietnam.clear = function () {
     $('#content').html("");
 };
 
+var favicon = new Favico({
+    animation : 'popFade'
+});
+
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),

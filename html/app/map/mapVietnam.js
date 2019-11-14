@@ -100,12 +100,10 @@ function mapHeatInitialize(data) {
         mapCenter = new google.maps.LatLng(data[0].latitude, data[0].longitude);
     }
 
-    var heatmapData = []
+    var heatmapData = [];
     for (i = 0; i < data.length; i++) {
         heatmapData.push(new google.maps.LatLng(data[i].latitude, data[i].longitude));
     }
-
-    console.log(heatmapData);
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,

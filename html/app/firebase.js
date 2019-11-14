@@ -30,5 +30,6 @@ messaging
 
 messaging.onMessage(function (payload) {
     console.log("Message received. ", payload);
-    swal('Good Job', 'You clicked the button!', 'warning');
+    swal(payload.notification.title || "", payload.notification.message || "", 'info');
+    HelloVietnam.notificationHeaderRefresh();
 });

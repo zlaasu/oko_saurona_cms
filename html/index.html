@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title></title>
+    <title>OkoSaurona</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="assets/css/app.min.css">
     <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico'/>
+    <link rel='shortcut icon' type='image/x-icon' href='/img/logo.png'/>
 </head>
 
 <body>
@@ -30,13 +30,19 @@
         <div class="navbar-bg"></div>
 
         <!-- Header -->
-        <div id="header-container"></div>
+
+        <nav id="header-container" class="navbar navbar-expand-lg main-navbar">
+        </nav>
 
         <!-- Menu -->
-        <div id="menu-container"></div>
+        <div id="menu-exists" class="main-sidebar sidebar-style-2" tabindex="1"
+             style="overflow: hidden; outline: none; touch-action: none;">
+
+        </div>
 
         <!-- Auth -->
-        <div id="auth-container"></div>
+        <div id="auth-container">
+        </div>
 
         <!-- Main Content -->
         <div class="main-content">
@@ -80,6 +86,7 @@
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyBdIss9DT7hkFJzdxI_k6h8PelgwXGNs9Q&libraries=visualization"></script>
 
 <!-- Custom JS File -->
+<script src="app/favico.js"></script>
 <script src="app/main.js"></script>
 <script src="app/navigo.js"></script>
 <script src="app/mustache.js"></script>
@@ -89,6 +96,7 @@
 <script src="app/trap/trapVietnam.js"></script>
 <script src="app/auth/authVietnam.js"></script>
 <script src="app/menu/menuVietnam.js"></script>
+<script src="app/notification/notificationVietnam.js"></script>
 
 <script src="app/router.js"></script>
 
