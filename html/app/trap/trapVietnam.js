@@ -1,7 +1,7 @@
 let trapTemplateFolder = "./app/trap/";
 
 HelloVietnam.trapList = function () {
-    HelloVietnam.ajaxData('api/cms/trap/list', 'GET', false, function (data) {
+    HelloVietnam.ajaxDataResponse('api/cms/trap/list', 'GET', false, function (data) {
         if (data) {
             $("#templates").load(trapTemplateFolder + "trapList.html", function () {
                 for (var i = 0; i < data.length; i++) {
@@ -30,21 +30,37 @@ HelloVietnam.trapList = function () {
                 $('table').DataTable();
             });
         }
+    }, function (data) {
+        showAjaxError(data);
     });
 };
 
-
 HelloVietnam.trapDelete = function (id) {
-    HelloVietnam.ajaxData('api/cms/trap/' + id, 'DELETE', false, function (data) {
-        if (data) {
-            $('#delete_' + id).parents("tr").remove();
-        }
-    });
+    swal({
+        title: 'Are you sure?',
+        text: 'Once deleted, you will not be able to recover this trap!',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                HelloVietnam.ajaxDataResponse('api/cms/trap/' + id, 'DELETE', false, function (data) {
+
+                    $('#delete_' + id).parents("tr").remove();
+
+                    swal('', {
+                        icon: 'success',
+                    });
+                }, function (data) {
+                    showAjaxError(data);
+                });
+            }
+        });
 };
 
 HelloVietnam.trapEdit = function (param) {
-    // if (param.id != 0) {
-    HelloVietnam.ajaxData('api/cms/trap/' + param.id, 'GET', false, function (data) {
+    HelloVietnam.ajaxDataResponse('api/cms/trap/' + param.id, 'GET', false, function (data) {
         if (data) {
             if (data.trap.active == true) {
                 data.trap.active = "checked";
@@ -66,9 +82,9 @@ HelloVietnam.trapEdit = function (param) {
 
             parsForm(data);
         }
+    }, function (data) {
+        showAjaxError(data);
     });
-    // } else {
-    //     parsForm("");
 };
 
 HelloVietnam.trapSave = function () {
@@ -95,10 +111,11 @@ HelloVietnam.trapSave = function () {
         type = "PUT"
     }
 
-    HelloVietnam.ajaxData('api/cms/trap/' + formData['id'], type, false, function (data) {
-        if (data) {
-            window.location.href = HASH + '/trap';
-        }
+    HelloVietnam.ajaxDataResponse('api/cms/trap/' + formData['id'], type, false, function (data) {
+        showAjaxSuccessSave(data);
+        window.location.href = HASH + '/trap';
+    }, function (data) {
+        showAjaxError(data);
     }, JSON.stringify(formData));
 };
 
