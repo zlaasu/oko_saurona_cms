@@ -12,17 +12,19 @@ var config = {
 };
 firebase.initializeApp(config);
 
+var FIREBASE_TOKEN;
+
 const messaging = firebase.messaging();
 messaging
     .requestPermission()
     .then(function () {
-        console.log("Notification permission granted.");
-
+        //console.log("Notification permission granted.");
         // get the token in the form of promise
         return messaging.getToken()
     })
     .then(function (token) {
-        console.log("token is : " + token);
+        FIREBASE_TOKEN = token;
+        //console.log("token is : " + token);
     })
     .catch(function (err) {
         console.log("Unable to get permission to notify.", err);

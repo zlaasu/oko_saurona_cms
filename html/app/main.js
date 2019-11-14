@@ -16,6 +16,9 @@ $(document).ajaxError(function (event, jqxhr, settings, exception) {
     if (jqxhr.status == 401) {
         window.location.href = HASH + "/login";
     }
+    if (jqxhr.status == 403) {
+        window.location.href = HASH + "/login";
+    }
 });
 
 var HelloVietnam = HelloVietnam || {};
@@ -64,7 +67,6 @@ HelloVietnam.ajaxData = function (url, type, key, callback, data) {
         error: callback
     });
 };
-
 
 HelloVietnam.clear = function () {
     $('#auth-container').html("");

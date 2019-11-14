@@ -33,6 +33,7 @@ router
         '/home': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
+            HelloVietnam.updateFirebaseToken(FIREBASE_TOKEN);
             HelloVietnam.notificationHeaderRefresh();
         },
         '/device': function () {
@@ -77,10 +78,11 @@ router
             HelloVietnam.notificationList();
             HelloVietnam.notificationHeaderRefresh();
         },
-        '/settings': function () {
+        '/user': function () {
             HelloVietnam.header();
             HelloVietnam.menu();
             HelloVietnam.userSettings();
+            HelloVietnam.updateFirebaseToken(FIREBASE_TOKEN);
             HelloVietnam.notificationHeaderRefresh();
         },
         '/logout': function () {

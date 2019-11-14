@@ -5,3 +5,7 @@
 label.error {
     color: #dc3545 !important;
 }
+
+.nav-pills .nav-item .nav-link {
+    color: #3abaf4;
+}

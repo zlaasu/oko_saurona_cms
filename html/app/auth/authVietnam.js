@@ -24,6 +24,9 @@ HelloVietnam.login = function () {
                         });
 
                         localStorage.token = response.accessToken;
+
+                        HelloVietnam.updateFirebaseToken(FIREBASE_TOKEN);
+
                         window.location.href = HASH + '/home';
                     }, function (response) {
                         iziToast.error({
