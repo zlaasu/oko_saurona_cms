@@ -1,8 +1,6 @@
 let mapTemplateFolder = "./app/map/";
 
 HelloVietnam.map = function () {
-    console.log(window.location.href);
-
     HelloVietnam.ajaxDataResponse('api/cms/device/list', 'GET', false, function (data) {
         if (data) {
             $("#templates").load(mapTemplateFolder + "map.html", function () {

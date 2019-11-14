@@ -77,6 +77,17 @@ router
             HelloVietnam.notificationList();
             HelloVietnam.notificationHeaderRefresh();
         },
+        '/settings': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.userSettings();
+            HelloVietnam.notificationHeaderRefresh();
+        },
+        '/logout': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.userLogout();
+        },
         '*': function () {
             HelloVietnam.clear();
             window.location.href = HASH + "/login";

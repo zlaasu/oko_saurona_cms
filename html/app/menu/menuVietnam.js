@@ -8,8 +8,6 @@ HelloVietnam.menu = function () {
             let output = Mustache.render($('#menu').html(), "");
             //console.log(output);
             $('#menu-container').html(output);
-
-            HelloVietnam.after();
         });
     }
 };
@@ -21,8 +19,6 @@ HelloVietnam.header = function () {
         $("#templates").load(menuTemplateFolder + "header.html", function () {
             let output = Mustache.render($('#header').html(), "");
             $('#header-container').html(output);
-
-            HelloVietnam.after();
         });
     }
 };
