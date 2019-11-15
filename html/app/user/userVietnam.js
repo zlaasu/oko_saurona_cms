@@ -28,9 +28,6 @@ HelloVietnam.userSettings = function () {
                 data.discord = "";
             }
 
-            console.log(data.notiOne);
-            console.log(data.notiOneStatus);
-
             let output = Mustache.render($('#editForm').html(), data);
 
             $('#content').html(output);
@@ -42,7 +39,7 @@ HelloVietnam.userSettings = function () {
     });
 };
 
-HelloVietnam.userSave = function() {
+HelloVietnam.userSave = function () {
     event.preventDefault();
 
     let formData = {};
@@ -72,7 +69,15 @@ HelloVietnam.userSave = function() {
 
 };
 
-HelloVietnam.updateFirebaseToken = function(token) {
+HelloVietnam.updateFirebaseToken = function (token) {
+
+    if (typeof token === 'undefined') {
+        return;
+    }
+
+    if (token.length < 20) {
+        return;
+    }
 
     let formData = {};
     formData['firebaseToken'] = token;
@@ -82,8 +87,6 @@ HelloVietnam.updateFirebaseToken = function(token) {
     }, function (data) {
         showAjaxError(data);
     }, JSON.stringify(formData));
-
-
 };
 
 
@@ -115,4 +118,28 @@ function showNotiOnePassword() {
     } else {
         x.type = "password";
     }
+}
+
+function copyApiKeyToClipboard() {
+    var copyText = document.getElementById("apiKey");
+
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+
+    document.execCommand("copy");
+
+    iziToast.info({
+        message: 'Copied',
+        position: 'topRight'
+    });
+}
+
+function generateApiKey() {
+    HelloVietnam.ajaxDataResponse('api/cms/user/genApiKey', 'GET', false, function (data) {
+
+        $("#apiKey").val(data.apiKey);
+
+    }, function (data) {
+        showAjaxError(data);
+    }, "");
 }

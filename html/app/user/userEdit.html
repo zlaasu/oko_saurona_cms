@@ -107,9 +107,21 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="apiKey">API key</label>
-                                            <input id="apiKey" type="text" class="form-control"
-                                                   name="apiKey" readonly style="color: #6c757d;" value="{{apiKey}}">
+                                            <label>API key</label>
+                                            <div class="input-group">
+                                                <input id="apiKey" type="text" class="form-control pwstrength"
+                                                       name="apiKey" readonly style="color: #6c757d;" value="{{apiKey}}">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text" onclick="copyApiKeyToClipboard()">
+                                                        <i class="fas fa-clipboard"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text" onclick="generateApiKey()">
+                                                        <i class="fas fa-sync-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 

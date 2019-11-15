@@ -1,0 +1,25 @@
+version: '2.1'
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./web_html:/var/www/html
+      - ./web_html:/usr/share/nginx/html
+    restart: always
+    labels:
+      - "traefik.frontend.rule=Host:okosaurona.zlasu.org"
+      - "traefik.docker.network=proxy"
+      - "traefik.port=80"
+    mem_limit: 500M
+    networks:
+      - okoSaurona
+      - proxy
+
+
+volumes:
+  web_html:
+
+networks:
+  okoSaurona:
+  proxy:
+    external: true

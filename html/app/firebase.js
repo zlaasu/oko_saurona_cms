@@ -12,8 +12,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var FIREBASE_TOKEN;
-
 const messaging = firebase.messaging();
 messaging
     .requestPermission()
