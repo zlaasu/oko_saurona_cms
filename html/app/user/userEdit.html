@@ -1,0 +1,204 @@
+<div id="editForm">
+    <div class="row">
+
+        <!--        3abaf4-->
+
+        <div class="col-6">
+            <div class="card card card-info">
+                <div class="card-header">
+                    <h4>User</h4>
+                    <div class="card-header-action">
+                        <button onclick="HelloVietnam.userSave()" class="btn btn-outline-success" id="save">Save
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-9">
+
+                            <form method="POST" class="needs-validation" novalidate="" id="registerForm">
+                                <div class="tab-content no-padding" id="myTab2Content">
+
+                                    <!--MAIN-->
+                                    <div class="tab-pane fade active show" id="home4" role="tabpanel"
+                                         aria-labelledby="home-tab4">
+
+                                        <div class="row">
+                                            <div class="form-group col-6">
+                                                <label for="firstName">First Name</label>
+                                                <input id="firstName" type="text" class="form-control"
+                                                       name="firstName" value="{{firstName}}">
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <label for="lastName">Last Name</label>
+                                                <input id="lastName" type="text" class="form-control"
+                                                       name="lastName" value="{{lastName}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="email" class="form-control" name="email" required
+                                                   value="{{email}}" readonly style="color: #6c757d;">
+                                        </div>
+
+<!--                                        <div class="row">-->
+<!--                                            <div class="form-group col-6">-->
+<!--                                                <label for="password" class="d-block">Password</label>-->
+<!--                                                <input id="password" type="password" class="form-control pwstrength"-->
+<!--                                                       data-indicator="pwindicator"-->
+<!--                                                       name="password" required minlength=6>-->
+<!--                                            </div>-->
+<!--                                            <div class="form-group col-6">-->
+<!--                                                <label for="password2" class="d-block">Password Confirmation</label>-->
+<!--                                                <input id="password2" type="password" class="form-control"-->
+<!--                                                       name="password-confirm" required>-->
+
+<!--                                            </div></div>-->
+
+
+                                    </div>
+
+                                    <!--NOTIONE-->
+                                    <div class="tab-pane fade" id="profile4" role="tabpanel"
+                                         aria-labelledby="profile-tab4">
+
+                                        <div class="form-group">
+                                            <label class="mt-2">
+                                                <input {{noti}} type="checkbox" id="notiOne"
+                                                       name="custom-switch-checkbox"
+                                                       class="custom-switch-input">
+                                                <span class="custom-switch-indicator"></span>
+                                                <span class="custom-switch-description">Beacons integration</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="notiOneLogin">Becon login</label>
+                                            <input id="notiOneLogin" type="text" class="form-control"
+                                                   name="notiOneLogin" value="{{notiOneLogin}}">
+                                        </div>
+
+                                        <div class="input-group colorpickerinput colorpicker-element"
+                                             data-colorpicker-id="2">
+                                            <input id="notiOnePassword" type="password" class="form-control pwstrength"
+                                                   data-indicator="pwindicator"
+                                                   name="notiOnePassword" value="{{notiOnePassword}}">
+                                            <div class="input-group-append">
+                                                <div class="input-group-text" onclick="showNotiOnePassword()">
+                                                    <i class="fas fa-binoculars"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!--API-->
+                                    <div class="tab-pane fade" id="contact4" role="tabpanel"
+                                         aria-labelledby="contact-tab4">
+
+                                        <div class="form-group">
+                                            <label class="mt-2">
+                                                <input type="checkbox" id="api" name="custom-switch-checkbox"
+                                                       class="custom-switch-input" {{api}}>
+                                                <span class="custom-switch-indicator"></span>
+                                                <span class="custom-switch-description">REST API</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>API key</label>
+                                            <div class="input-group">
+                                                <input id="apiKey" type="text" class="form-control pwstrength"
+                                                       name="apiKey" readonly style="color: #6c757d;" value="{{apiKey}}">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text" onclick="copyApiKeyToClipboard()">
+                                                        <i class="fas fa-clipboard"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text" onclick="generateApiKey()">
+                                                        <i class="fas fa-sync-alt"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--SMS-->
+                                    <div class="tab-pane fade" id="sms4" role="tabpanel"
+                                         aria-labelledby="contact-tab4">
+
+                                        <div class="form-group">
+                                            <label class="mt-2">
+                                                <input type="checkbox" id="sms" name="custom-switch-checkbox"
+                                                       class="custom-switch-input" {{sms}}>
+                                                <span class="custom-switch-indicator"></span>
+                                                <span class="custom-switch-description">SMS integration</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phone">Phone</label>
+                                            <input id="phone" type="text" class="form-control"
+                                                   name="phone" value="{{phone}}">
+                                        </div>
+                                    </div>
+
+                                    <!--Discord-->
+                                    <div class="tab-pane fade" id="discord4" role="tabpanel"
+                                         aria-labelledby="contact-tab4">
+
+                                        <div class="form-group">
+                                            <label class="mt-2">
+                                                <input type="checkbox" id="discord" name="custom-switch-checkbox"
+                                                       class="custom-switch-input" {{discord}}>
+                                                <span class="custom-switch-indicator"></span>
+                                                <span class="custom-switch-description">Discord integration</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="webHook">Webhook</label>
+                                            <input id="webHook" type="text" class="form-control"
+                                                   name="webHook" value="{{webHook}}">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-3">
+                            <ul class="nav nav-pills flex-column" id="myTab4" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab4" data-toggle="tab" href="#home4" role="tab"
+                                       aria-controls="home" aria-selected="true">Main</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab4" data-toggle="tab" href="#profile4" role="tab"
+                                       aria-controls="profile" aria-selected="false">Beacons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab4" data-toggle="tab" href="#contact4" role="tab"
+                                       aria-controls="contact" aria-selected="false">REST API</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab4" data-toggle="tab" href="#sms4" role="tab"
+                                       aria-controls="contact" aria-selected="false">SMS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab4" data-toggle="tab" href="#discord4" role="tab"
+                                       aria-controls="contact" aria-selected="false">Discord</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

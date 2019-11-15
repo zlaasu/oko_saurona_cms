@@ -1,9 +1,12 @@
 <div id="editForm">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-6">
-            <div class="card">
+            <div class="card card-success">
                 <div class="card-header">
                     <h4>Book add/edit</h4>
+                    <div class="card-header-action">
+                        <button onclick="HelloVietnam.deviceSave()" class="btn btn-outline-success" id="save">Save</button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <input type="text" class="form-control" id="device_id" hidden value="{{id}}">
@@ -11,7 +14,7 @@
                     <div class="form-group">
                         <label class="mt-2">
                             <input type="checkbox" id="device_status" name="custom-switch-checkbox"
-                                   class="custom-switch-input" {{status}}>
+                                   class="custom-switch-input" {{active}}>
                             <span class="custom-switch-indicator"></span>
                             <span class="custom-switch-description">ACTIVE</span>
                         </label>
@@ -20,8 +23,10 @@
                     <div class="form-group">
                         <label>Type</label>
                         <select class="form-control form-control-sm" id="device_type" required>
-                            <option value="1" {{type1}}>PHONE</option>
-                            <option value="2" {{type2}}>BIKE</option>
+                            <option value="OTHER" {{type1}}>OTHER</option>
+                            <option value="BIKE" {{type2}}>BIKE</option>
+                            <option value="PHONE" {{type3}}>PHONE</option>
+                            <option value="CAR" {{type4}}>CAR</option>
                         </select>
                     </div>
 
@@ -30,9 +35,6 @@
                         <input type="text" class="form-control" id="device_name" required value="{{name}}">
                     </div>
 
-                    <div class="card-footer text-right">
-                        <button onclick="HelloVietnam.deviceSave()" class="btn btn-outline-success" id="save">Save</button>
-                    </div>
                 </div>
 
             </div>

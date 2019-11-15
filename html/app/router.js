@@ -22,23 +22,77 @@ const router = new Navigo(root, useHash, HASH);
 
 router
     .on({
+        '/login': function () {
+            HelloVietnam.clear();
+            HelloVietnam.login();
+        },
+        '/register': function () {
+            HelloVietnam.clear();
+            HelloVietnam.register();
+        },
+        '/home': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.updateFirebaseToken(FIREBASE_TOKEN);
+            HelloVietnam.notificationHeaderRefresh();
+        },
         '/device': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.deviceList();
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/device/:id': function (param) {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.deviceEdit(param);
+            HelloVietnam.notificationHeaderRefresh();
         },
-        '/book': function () {
-            HelloVietnam.books();
+        '/trap': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.trapList();
+            HelloVietnam.notificationHeaderRefresh();
+        },
+        '/trap/:id': function (param) {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.trapEdit(param);
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/map': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
             HelloVietnam.map();
+            HelloVietnam.notificationHeaderRefresh();
         },
         '/heatmap': function () {
-            HelloVietnam.mapHeat();
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.map();
+            HelloVietnam.notificationHeaderRefresh();
+        },
+        '/notification': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.notificationList();
+            HelloVietnam.notificationHeaderRefresh();
+        },
+        '/user': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.userSettings();
+            HelloVietnam.updateFirebaseToken(FIREBASE_TOKEN);
+            HelloVietnam.notificationHeaderRefresh();
+        },
+        '/logout': function () {
+            HelloVietnam.header();
+            HelloVietnam.menu();
+            HelloVietnam.userLogout();
         },
         '*': function () {
-            console.log('Home......');
+            HelloVietnam.clear();
+            window.location.href = HASH + "/login";
         }
     })
     .resolve();

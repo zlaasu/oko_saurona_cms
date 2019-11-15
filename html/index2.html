@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>OkoSaurona</title>
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css">
+    <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="assets/bundles/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="assets/bundles/jquery-selectric/selectric.css">
+    <link rel="stylesheet" href="assets/bundles/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="assets/bundles/izitoast/css/iziToast.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel='shortcut icon' type='image/x-icon' href='/img/logo.png'/>
+</head>
+
+<body>
+<div class="loader"></div>
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="navbar-bg"></div>
+
+        <!-- Header -->
+
+<!--        <div id="header-container">-->
+            <nav id="header-exists" class="navbar navbar-expand-lg main-navbar">
+                <div class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li>
+                            <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-align-justify">
+                                    <line x1="21" y1="10" x2="3" y2="10"></line>
+                                    <line x1="21" y1="6" x2="3" y2="6"></line>
+                                    <line x1="21" y1="14" x2="3" y2="14"></line>
+                                    <line x1="21" y1="18" x2="3" y2="18"></line>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-maximize">
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <!--                <li>-->
+                        <!--                    <form class="form-inline mr-auto">-->
+                        <!--                        <div class="search-element">-->
+                        <!--                            <input class="form-control" type="search" placeholder="Search" aria-label="Search"-->
+                        <!--                                   data-width="200" style="width: 200px;">-->
+                        <!--                            <button class="btn" type="submit">-->
+                        <!--                                <i class="fas fa-search"></i>-->
+                        <!--                            </button>-->
+                        <!--                        </div>-->
+                        <!--                    </form>-->
+                        <!--                </li>-->
+                    </ul>
+                </div>
+
+                <ul class="navbar-nav navbar-right">
+                    <li class="dropdown dropdown-list-toggle" id="notificationHeader">
+
+
+                    </li>
+                </ul>
+            </nav>
+<!--        </div>-->
+
+        <!-- Menu -->
+        <div id="menu-container" >
+            <div id="menu-exists" class="main-sidebar sidebar-style-2" tabindex="1"
+                 style="overflow: hidden; outline: none; touch-action: none;">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a href="#">
+                            <img alt="image" src="img/logo.png" class="header-logo">
+                            <span class="logo-name">Oko Saurona</span>
+                        </a>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Main</li>
+                        <li>
+                            <a class="nav-link" href="#/home">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#/notification">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-alert-octagon">
+                                    <polygon
+                                            points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12" y2="16"></line>
+                                </svg>
+                                <span>Notifications</span>
+                            </a>
+                        </li>
+
+
+                        <li class="menu-header">Resources</li>
+                        <li>
+                            <a class="nav-link" href="#/device">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-smartphone">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12" y2="18"></line>
+                                </svg>
+                                <span>Devices</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#/trap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-check-circle">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Traps</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-header">Map</li>
+                        <li>
+                            <a class="nav-link" href="#/map">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-map-pin">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span>Map</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#/heatmap">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-map">
+                                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                                </svg>
+                                <span>Heat</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-header">User</li>
+                    </ul>
+                </aside>
+
+            </div>
+        </div>
+
+        <!-- Auth -->
+        <div id="auth-container">
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="section-body">
+
+                    <div id="content"></div>
+
+                </div>
+            </section>
+        </div>
+
+        <div id="templates" style="display: none;"></div>
+
+    </div>
+</div>
+
+<!-- General JS Scripts -->
+<script src="assets/js/app.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
+<!-- JS Libraies -->
+<script src="assets/bundles/datatables/datatables.min.js"></script>
+<script src="assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets/bundles/jquery-ui/jquery-ui.min.js"></script>
+<script src="assets/js/page/datatables.js"></script>
+<script src="assets/bundles/cleave-js/dist/cleave.min.js"></script>
+<script src="assets/bundles/cleave-js/dist/addons/cleave-phone.us.js"></script>
+<script src="assets/bundles/jquery-pwstrength/jquery.pwstrength.min.js"></script>
+<script src="assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!--<script src="assets/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>-->
+<script src="assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script src="assets/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="assets/bundles/select2/dist/js/select2.full.min.js"></script>
+<script src="assets/bundles/jquery-selectric/jquery.selectric.min.js"></script>
+<script src="assets/bundles/izitoast/js/iziToast.min.js"></script>
+<script src="assets/bundles/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="assets/bundles/sweetalert/sweetalert.min.js"></script>
+
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyBdIss9DT7hkFJzdxI_k6h8PelgwXGNs9Q&libraries=visualization"></script>
+
+<!-- Custom JS File -->
+<script src="app/favico.js"></script>
+<script src="app/main.js"></script>
+<script src="app/navigo.js"></script>
+<script src="app/mustache.js"></script>
+
+<script src="app/device/deviceVietnam.js"></script>
+<script src="app/map/mapVietnam.js"></script>
+<script src="app/trap/trapVietnam.js"></script>
+<script src="app/auth/authVietnam.js"></script>
+<script src="app/menu/menuVietnam.js"></script>
+<script src="app/notification/notificationVietnam.js"></script>
+
+<script src="app/router.js"></script>
+
+<script src="app/forms.js"></script>
+
+<script src="app/firebase.js"></script>
+
+<script src="assets/js/scripts.js"></script>
+
+<script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

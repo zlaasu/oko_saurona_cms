@@ -5,7 +5,7 @@
                 <div class="card-header">
                     <h4>Devices</h4>
                     <div class="card-header-action">
-                        <a href="#/device/0">
+                        <a href="#/trap/0">
                             <button class="btn btn-outline-success" id="save">Add new</button>
                         </a>
                     </div>
@@ -19,37 +19,32 @@
                                 <th>Type</th>
                                 <th>Name</th>
                                 <th>Active</th>
-                                <th>Owner</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <!--{{#devices}}-->
+                            <!--{{#traps}}-->
                             <tr>
                                 <td>{{id}}</td>
                                 <td>
-                                    <i class="material-icons">{{typeIcon}}</i>
-                                    <span class="icon-name">{{typeName}}</span>
+                                        <i class="material-icons">{{typeIcon}}</i>
+                                        <span class="icon-name">{{typeName}}</span>
                                 </td>
                                 <td>{{name}}</td>
                                 <td>
                                     <span class="badge {{activeBadge}}">{{activeName}}</span>
                                 </td>
-                                <td>
-                                    <i class="material-icons">{{externalIcon}}</i>
-<!--                                    <span class="icon-name">{{externalName}}</span>-->
-                                </td>
                                 <td class="">
-                                    <a href="#/device/{{id}}" class="btn btn-outline-primary"
+                                    <a href="#/trap/{{id}}" class="btn btn-outline-primary"
                                        role="button">Edit</a>
-                                    <!--{{^external}}-->
-                                    <a onclick="HelloVietnam.deviceDelete({{id}})" id="delete_{{id}}"
+                                    <a onclick="HelloVietnam.trapDelete({{id}})" id="delete_{{id}}"
                                        style="color: white"
                                        class="btn btn-outline-danger" role="button">Delete</a>
-                                    <!--{{/external}}-->
+
+
                                 </td>
                             </tr>
-                            <!--{{/devices}}-->
+                            <!--{{/traps}}-->
                             </tbody>
                         </table>
                     </div>
